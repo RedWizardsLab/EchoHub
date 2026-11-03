@@ -152,7 +152,7 @@ internal sealed class ConnectionManager : IAsyncDisposable
             // all of them, not just channels opened this session. Channels the user left
             // with /leave stay out until rejoined; protected channels we can't enter
             // silently (no cached membership) are skipped, never prompted for.
-            var leftChannels = FindServer(ConfigManager.Load(), info.ServerUrl)?.LeftChannels ?? [];
+            var leftChannels = ConfigManager.Load().FindServer(info.ServerUrl)?.LeftChannels ?? [];
             foreach (var channel in channels)
             {
                 if (channel.Name.Equals(HubConstants.DefaultChannel, StringComparison.OrdinalIgnoreCase))
@@ -332,17 +332,13 @@ internal sealed class ConnectionManager : IAsyncDisposable
     {
         if (_apiClient?.RefreshToken is null) return;
         var config = ConfigManager.Load();
-        var server = FindServer(config, _apiClient.BaseUrl);
+        var server = config.FindServer(_apiClient.BaseUrl);
         if (server is not null && server.RememberMe)
         {
             server.RefreshToken = _apiClient.RefreshToken;
             ConfigManager.Save(config);
         }
     }
-
-    private static SavedServer? FindServer(ClientConfig config, string url) =>
-        config.SavedServers.FirstOrDefault(s =>
-            string.Equals(s.Url, url, StringComparison.OrdinalIgnoreCase));
 
     // ── Dispose ───────────────────────────────────────────────────────────
 
