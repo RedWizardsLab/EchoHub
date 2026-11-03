@@ -127,7 +127,7 @@ jobs:
         if: steps.changes.outputs.src_changed == 'true' && steps.check_release.outputs.exists == 'false'
         run: |
           TAG="${{ steps.version.outputs.tag }}"
-          CHANGELOG_URL="https://huebyte.github.io/EchoHub/changelog/${TAG}.html"
+          CHANGELOG_URL="https://redwizardslab.github.io/EchoHub/changelog/${TAG}.html"
           REPO="https://github.com/${{ github.repository }}"
           PREV_TAG=$(git tag --sort=-v:refname | grep -v "^${TAG}$" | head -n 1)
 
