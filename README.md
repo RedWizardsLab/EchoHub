@@ -8,7 +8,7 @@
 
 Self-hosted, IRC-inspired chat with an open API. Use the terminal, a desktop app, IRC, or a client you build yourself.
 
-[Website](https://echohub.voidcube.cloud/) · [Public servers](https://echohub.voidcube.cloud/servers) · [Documentation](https://huebyte.github.io/EchoHub/) · [Changelog](docs/changelog/index.md)
+[Website](https://echohub.voidcube.cloud/) · [Public servers](https://echohub.voidcube.cloud/servers) · [Documentation](https://redwizardslab.github.io/EchoHub/) · [Changelog](docs/changelog/index.md)
 
 <a href="https://github.com/HueByte/EchoHub/actions/workflows/ci.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/HueByte/EchoHub/ci.yml?branch=master&style=flat-square&logo=github&label=Build" /></a>
 <a href="https://github.com/HueByte/EchoHub/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/HueByte/EchoHub?style=flat-square&logo=github&label=Release" /></a>
@@ -92,7 +92,7 @@ graph LR
 | 📎 **Files, images, audio** | Uploads are checked by their real bytes, not the file extension. Images even render as ASCII in the terminal, because why not. |
 | 📤 **Take your data and go** | One command exports everything the server knows about you. Another deletes the account for good. |
 
-Full feature tour in the [documentation](https://huebyte.github.io/EchoHub/articles/getting-started.html).
+Full feature tour in the [documentation](https://redwizardslab.github.io/EchoHub/articles/getting-started.html).
 
 ## Clients
 
@@ -103,7 +103,7 @@ The terminal client is the main, native interface. Beyond that the API and the I
 | **[Terminal client](src/EchoHub.Client)** | Windows · macOS · Linux | The main, native client (Terminal.Gui v2), shipped as a self-contained binary |
 | **[decho](https://github.com/Stone-Red-Code/Decho)** | Desktop | A community desktop client |
 | **Any IRC client** | Everywhere | irssi, WeeChat, TheLounge, and friends, through the built-in gateway |
-| **Your own** | anything | Build against the open REST + SignalR API. See the [documentation](https://huebyte.github.io/EchoHub/) |
+| **Your own** | anything | Build against the open REST + SignalR API. See the [documentation](https://redwizardslab.github.io/EchoHub/) |
 
 ## Quick start
 
@@ -128,22 +128,22 @@ docker compose up -d
 
 Pre-built multi-arch images live on [GHCR](https://github.com/HueByte/EchoHub/pkgs/container/echohub-server). Prefer running from source? `dotnet run --project src/EchoHub.Server` (needs the [.NET 10 SDK](https://dotnet.microsoft.com/download)). The first launch writes its config, generates a JWT secret, and creates the database with a `#general` channel. No manual setup.
 
-→ **[Getting started](https://huebyte.github.io/EchoHub/articles/getting-started.html)** · **[Docker & deployment](https://huebyte.github.io/EchoHub/articles/docker.html)** · **[Configuration](https://huebyte.github.io/EchoHub/articles/configuration.html)**
+→ **[Getting started](https://redwizardslab.github.io/EchoHub/articles/getting-started.html)** · **[Docker & deployment](https://redwizardslab.github.io/EchoHub/articles/docker.html)** · **[Configuration](https://redwizardslab.github.io/EchoHub/articles/configuration.html)**
 
 ## Documentation
 
-Everything lives at **[huebyte.github.io/EchoHub](https://huebyte.github.io/EchoHub/)**:
+Everything lives at **[redwizardslab.github.io/EchoHub](https://redwizardslab.github.io/EchoHub/)**:
 
 | Guide | What's inside |
 | --- | --- |
-| [Getting started](https://huebyte.github.io/EchoHub/articles/getting-started.html) | Install, first connection, the onboarding flow |
-| [TUI guide](https://huebyte.github.io/EchoHub/articles/tui-guide.html) | Slash commands, themes, keybindings, message actions |
-| [Configuration](https://huebyte.github.io/EchoHub/articles/configuration.html) | Every `appsettings.json` / env key explained |
-| [IRC gateway](https://huebyte.github.io/EchoHub/articles/irc-gateway.html) | Connecting IRC clients, what maps to what, TLS |
-| [Encrypted rooms](https://huebyte.github.io/EchoHub/articles/encrypted-rooms.html) | How zero-knowledge password channels work |
-| [Moderation](https://huebyte.github.io/EchoHub/articles/moderation.html) | Roles, bans, mutes, invite codes |
-| [Docker & deployment](https://huebyte.github.io/EchoHub/articles/docker.html) | Compose, reverse proxy, TLS (see also [`examples/nginx.conf`](examples/nginx.conf)) |
-| [Architecture](https://huebyte.github.io/EchoHub/articles/architecture.html) | How the pieces above actually fit together |
+| [Getting started](https://redwizardslab.github.io/EchoHub/articles/getting-started.html) | Install, first connection, the onboarding flow |
+| [TUI guide](https://redwizardslab.github.io/EchoHub/articles/tui-guide.html) | Slash commands, themes, keybindings, message actions |
+| [Configuration](https://redwizardslab.github.io/EchoHub/articles/configuration.html) | Every `appsettings.json` / env key explained |
+| [IRC gateway](https://redwizardslab.github.io/EchoHub/articles/irc-gateway.html) | Connecting IRC clients, what maps to what, TLS |
+| [Encrypted rooms](https://redwizardslab.github.io/EchoHub/articles/encrypted-rooms.html) | How zero-knowledge password channels work |
+| [Moderation](https://redwizardslab.github.io/EchoHub/articles/moderation.html) | Roles, bans, mutes, invite codes |
+| [Docker & deployment](https://redwizardslab.github.io/EchoHub/articles/docker.html) | Compose, reverse proxy, TLS (see also [`examples/nginx.conf`](examples/nginx.conf)) |
+| [Architecture](https://redwizardslab.github.io/EchoHub/articles/architecture.html) | How the pieces above actually fit together |
 
 ## Building from source
 
