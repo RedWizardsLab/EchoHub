@@ -18,6 +18,14 @@ public class ClientConfig
     /// Applies to copy-paste/drag-drop attachments, which have no per-file size flag.
     /// </summary>
     public string DefaultAsciiSize { get; set; } = "m";
+
+    /// <summary>
+    /// Finds a saved server by URL. A trailing slash is ignored: entries keep the URL as the
+    /// user typed it, while <see cref="Services.ApiClient.BaseUrl"/> has the slash removed.
+    /// </summary>
+    public SavedServer? FindServer(string url) =>
+        SavedServers.FirstOrDefault(s =>
+            string.Equals(s.Url.TrimEnd('/'), url.TrimEnd('/'), StringComparison.OrdinalIgnoreCase));
 }
 
 public class NotificationConfig

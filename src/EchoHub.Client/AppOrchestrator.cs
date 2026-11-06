@@ -2232,8 +2232,7 @@ public sealed class AppOrchestrator : IDisposable
         if (url is null) return;
 
         var config = ConfigManager.Load();
-        var server = config.SavedServers.FirstOrDefault(s =>
-            string.Equals(s.Url, url, StringComparison.OrdinalIgnoreCase));
+        var server = config.FindServer(url);
         if (server is null) return;
 
         mutate(server);
